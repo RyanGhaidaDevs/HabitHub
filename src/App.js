@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 
 
@@ -56,11 +57,38 @@ export default class App extends Component {
   }
 
 
-
-
   render(){
     return (
       <div className="App">
+      <BrowserRouter>
+        <Switch>
+        <Redirect from="/" exact to="/home" />
+        <Route 
+            path={"/home"} 
+            render={ props => (
+              <div> 
+                <Home {...props} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
+              </div> 
+            )}
+          /> 
+        <Route 
+            path={"/registration"} 
+            render={ props => (
+              <div> 
+                <Registration {...props} handleLogin={this.handleLogin} /> 
+              </div> 
+            )}
+          /> 
+          <Route 
+            path={"/login"} 
+            render={ props => (
+              <div> 
+                <Login {...props} handleLogin={this.handleLogin} /> 
+              </div> 
+            )}
+          /> 
+        </Switch>
+      </BrowserRouter> 
       
       </div>
     );
