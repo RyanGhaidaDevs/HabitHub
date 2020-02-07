@@ -44,7 +44,7 @@ const styles = {
       password
     } = this.state 
 
-    axios.post("http://localhost3001/sessions",{
+    axios.post("http://localhost:3001/sessions",{
       user: {
         email: email, 
         password: password, 

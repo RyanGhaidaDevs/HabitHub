@@ -1,6 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { Redirect } from 'react-router';
+import axios from 'axios';
+import Registration from './auth/Registration';
+import Login from './auth/Login'; 
+import Home from './Home';
+
 
 
 export default class App extends Component {
@@ -51,7 +57,7 @@ export default class App extends Component {
       loggedInStatus: "NOT_LOGGED_IN",
       user: {}
     })
-    axios.delete("http://localhost:3001/logged_in", {withCredentials: true}).catch(error => {
+    axios.delete("http://localhost:3001/logout", {withCredentials: true}).catch(error => {
       console.log("logout error:", error)
     })
   }
@@ -67,7 +73,7 @@ export default class App extends Component {
             path={"/home"} 
             render={ props => (
               <div> 
-                <Home {...props} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
+                <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
               </div> 
             )}
           /> 

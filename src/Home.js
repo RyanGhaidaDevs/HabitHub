@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-
+import Button from '@material-ui/core/Button';
 
 const styles = {
 
@@ -14,11 +14,15 @@ class Home extends Component  {
 
   }
 
+
   render(){
 
     return(
       <div>
           <h1> home </h1>
+          <Button style={ {fontSize: '14px'} } color="inherit" onClick={this.props.handleLogout}>
+            Logout
+          </Button> 
       </div>
     )
   }
