@@ -10,7 +10,10 @@ const styles = {
 class Home extends Component  {
   constructor(props) {
     super(props);
-
+      this.state = {
+        reps: 0, 
+        user: {}
+      }
 
   }
 
@@ -20,6 +23,7 @@ class Home extends Component  {
     return(
       <div>
           <h1> home </h1>
+
           <Button style={ {fontSize: '14px'} } color="inherit" onClick={this.props.handleLogout}>
             Logout
           </Button> 
