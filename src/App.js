@@ -16,7 +16,7 @@ export default class App extends Component {
     this.state = {
       loggedInStatus: "NOT_LOGGED_IN",
       user: {},
-      
+
     }
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -74,7 +74,7 @@ export default class App extends Component {
             path={"/home"} 
             render={ props => (
               <div> 
-                <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
+                <Home {...props}   userId={this.state.user.id} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
               </div> 
             )}
           /> 

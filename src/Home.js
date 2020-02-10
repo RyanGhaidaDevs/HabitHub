@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
+
 
 const styles = {
 
@@ -16,6 +18,8 @@ class Home extends Component  {
       }
 
   this.handleChange = this.handleChange.bind(this)
+  this.handleSubmit = this.handleSubmit.bind(this)
+
   }
 
   handleChange(event){
@@ -33,7 +37,8 @@ class Home extends Component  {
 
     axios.post("http://localhost:3001/reps", {
       user: {
-        reps: reps
+        reps: reps,
+        user_id: this.props.userId
       }
     }, 
     { withCredentials: true }
@@ -47,9 +52,8 @@ class Home extends Component  {
     return(
       <div>
           <h1> home </h1>
-
           <form onSubmit={this.handleSubmit} > 
-        <h3> Email </h3> 
+        <h3> Reps </h3> 
         <input 
         style={
           {fontSize: 22,
@@ -63,9 +67,22 @@ class Home extends Component  {
           onChange={this.handleChange} 
           required 
         />
+        <Button 
+        label="submit"
+        type="submit"
+        primary={true}
+        margin='25'
+        variant="focus"
+        size="small"
+        style={
+          {fontSize: 24,
+            color: 'orange',
+            padding: 10,
+          } 
+        }
+        color="inherit"
+        > Submit </Button>
         
-      
-
         </form>
 
 
