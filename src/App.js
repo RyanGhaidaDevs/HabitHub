@@ -8,7 +8,7 @@ import Login from './auth/Login';
 import Home from './Home';
 import NavBar from './NavBar';
 import MeditationController from './Meditation/MeditationController';
-
+import Journal from './Journal';
 
 
 export default class App extends Component {
@@ -105,6 +105,15 @@ export default class App extends Component {
               <div> 
                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
                 <MeditationController {...props} handleLogin={this.handleLogin} /> 
+              </div> 
+            )}
+          /> 
+          <Route 
+            path={"/journal"} 
+            render={ props => (
+              <div> 
+                <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
+                <Journal {...props} handleLogin={this.handleLogin} /> 
               </div> 
             )}
           /> 
