@@ -74,8 +74,8 @@ const NavBar = (props) => {
     <div className={classes.root}>
     <AppBar className={classes.navbar} position="static">
       <Toolbar >
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          Menu
+        <IconButton onClick={()=> props.history.push("/home")} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          Home
         </IconButton>
         <Typography variant="h7" className={classes.title}>
           Habit Hub

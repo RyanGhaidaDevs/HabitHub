@@ -112,6 +112,7 @@ class MeditationBefore extends Component  {
         > Submit </Button>
       
         </form>
+        
         <Button 
           label="continue"
           primary={true}
