@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import YouTube from 'react-youtube';
 
 
 const styles = {
@@ -48,6 +49,14 @@ class Meditation extends Component  {
 
   render(){
 
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1
+      }
+    };
+
     return(
       <div>
          <h1> Meditation </h1>
@@ -83,6 +92,13 @@ class Meditation extends Component  {
         > Submit </Button>
         
         </form>
+
+        <YouTube
+          className="youtube"
+          videoId="jPpUNAFHgxM"
+          opts={opts}
+          onReady={this._onReady}
+        />
 
         <form onSubmit={this.handleSubmit} > 
         <h3> After </h3> 
