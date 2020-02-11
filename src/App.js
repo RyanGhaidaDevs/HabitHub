@@ -7,7 +7,7 @@ import Registration from './auth/Registration';
 import Login from './auth/Login'; 
 import Home from './Home';
 import NavBar from './NavBar';
-import Meditation from './Meditation';
+import MeditationController from './Meditation/MeditationController';
 
 
 
@@ -104,7 +104,7 @@ export default class App extends Component {
             render={ props => (
               <div> 
                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
-                <Meditation {...props} handleLogin={this.handleLogin} /> 
+                <MeditationController {...props} handleLogin={this.handleLogin} /> 
               </div> 
             )}
           /> 
