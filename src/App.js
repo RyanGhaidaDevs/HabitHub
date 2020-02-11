@@ -7,6 +7,7 @@ import Registration from './auth/Registration';
 import Login from './auth/Login'; 
 import Home from './Home';
 import NavBar from './NavBar';
+import Meditation from './Meditation';
 
 
 
@@ -84,7 +85,7 @@ export default class App extends Component {
             path={"/registration"} 
             render={ props => (
               <div> 
-                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
+                <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
                 <Registration {...props} handleLogin={this.handleLogin} /> 
               </div> 
             )}
@@ -95,6 +96,15 @@ export default class App extends Component {
               <div> 
                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
                 <Login {...props} handleLogin={this.handleLogin} /> 
+              </div> 
+            )}
+          /> 
+          <Route 
+            path={"/meditation"} 
+            render={ props => (
+              <div> 
+                <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
+                <Meditation {...props} handleLogin={this.handleLogin} /> 
               </div> 
             )}
           /> 

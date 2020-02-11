@@ -77,8 +77,8 @@ const NavBar = (props) => {
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           Menu
         </IconButton>
-        <Typography variant="h4" className={classes.title}>
-          Push-Up Pro 
+        <Typography variant="h7" className={classes.title}>
+          Habit Hub
         </Typography>
         <span className={classes.NavBarButtons}>
 

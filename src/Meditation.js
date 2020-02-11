@@ -9,7 +9,7 @@ const styles = {
 };
 
 
-class Home extends Component  {
+class Meditation extends Component  {
   constructor(props) {
     super(props);
       this.state = {
@@ -50,9 +50,42 @@ class Home extends Component  {
 
     return(
       <div>
-          <h1> home </h1>
-          <form onSubmit={this.handleSubmit} > 
-        <h3> Reps </h3> 
+         <h1> Meditation </h1>
+        <form onSubmit={this.handleSubmit} > 
+        <h3> Before </h3> 
+        <input 
+        style={
+          {fontSize: 22,
+            margin: 10,
+          width: 325} 
+        }
+          type="reps" 
+          name="reps" 
+          placeholder="Reps" 
+          value={this.state.reps} 
+          onChange={this.handleChange} 
+          required 
+        />
+        <Button 
+        label="submit"
+        type="submit"
+        primary={true}
+        margin='25'
+        variant="focus"
+        size="small"
+        style={
+          {fontSize: 24,
+            color: 'orange',
+            padding: 10,
+          } 
+        }
+        color="inherit"
+        > Submit </Button>
+        
+        </form>
+
+        <form onSubmit={this.handleSubmit} > 
+        <h3> After </h3> 
         <input 
         style={
           {fontSize: 22,
@@ -88,6 +121,6 @@ class Home extends Component  {
   }
 }
 
-export default withStyles(styles)(Home)
+export default withStyles(styles)(Meditation)
 
  
