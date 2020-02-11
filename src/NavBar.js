@@ -5,9 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import Modal from '@material-ui/core/Modal';
 import Login from './auth/Login';
-import BugReportIcon from '@material-ui/icons/BugReport';
 import Registration from './auth/Registration';
 
 
@@ -77,15 +75,13 @@ const NavBar = (props) => {
     <AppBar className={classes.navbar} position="static">
       <Toolbar >
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          <BugReportIcon className={classes.bugButton}  fontSize="large" onClick={() => props.history.push("/alllogs")}/>
+          Menu
         </IconButton>
         <Typography variant="h4" className={classes.title}>
           Push-Up Pro 
         </Typography>
         <span className={classes.NavBarButtons}>
 
-        
-    
         </span>
         <Typography variant="h4" >
           | 

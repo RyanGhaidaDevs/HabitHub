@@ -6,6 +6,7 @@ import axios from 'axios';
 import Registration from './auth/Registration';
 import Login from './auth/Login'; 
 import Home from './Home';
+import NavBar from './NavBar';
 
 
 
@@ -24,7 +25,7 @@ export default class App extends Component {
 
   }
   //switch to componetDidMount after working.
-  componentWillMount(){
+  componentDidMount(){
     this.checkLoginStatus();
   }
 
@@ -74,6 +75,7 @@ export default class App extends Component {
             path={"/home"} 
             render={ props => (
               <div> 
+                <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
                 <Home {...props}   userId={this.state.user.id} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
               </div> 
             )}
@@ -82,6 +84,7 @@ export default class App extends Component {
             path={"/registration"} 
             render={ props => (
               <div> 
+                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
                 <Registration {...props} handleLogin={this.handleLogin} /> 
               </div> 
             )}
@@ -90,6 +93,7 @@ export default class App extends Component {
             path={"/login"} 
             render={ props => (
               <div> 
+                <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
                 <Login {...props} handleLogin={this.handleLogin} /> 
               </div> 
             )}
