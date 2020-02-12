@@ -29,8 +29,19 @@ class Home extends Component  {
           margin='15'
           onClick={()=> this.props.history.push("/meditation")}
           > New Meditation </Button>
+             <Button 
+          label="continue"
+          primary={true}
+          margin='15'
+          onClick={()=> this.props.history.push("/journal")}
+          > New Journal </Button>
+            <Button 
+          label="continue"
+          primary={true}
+          margin='15'
+          onClick={()=> this.props.history.push("/coldShower")}
+          > Cold Shower </Button>
 
-       
       </div>
     )
   }

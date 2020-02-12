@@ -9,7 +9,7 @@ import Home from './Home';
 import NavBar from './NavBar';
 import MeditationController from './Meditation/MeditationController';
 import Journal from './Journal';
-
+import ColdShower from './ColdShower';
 
 export default class App extends Component {
   constructor() {
@@ -114,6 +114,15 @@ export default class App extends Component {
               <div> 
                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
                 <Journal {...props} handleLogin={this.handleLogin} /> 
+              </div> 
+            )}
+          /> 
+           <Route 
+            path={"/coldShower"} 
+            render={ props => (
+              <div> 
+                <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
+                <ColdShower {...props} handleLogin={this.handleLogin} /> 
               </div> 
             )}
           /> 
