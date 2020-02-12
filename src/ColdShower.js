@@ -55,7 +55,7 @@ class ColdShower extends Component  {
       minutes
     } = this.state 
 
-    axios.post("http://localhost:3001/coldShower", {
+    axios.post("http://localhost:3001/shower", {
       user: {
         minutes: minutes,
         user_id: this.props.userId
