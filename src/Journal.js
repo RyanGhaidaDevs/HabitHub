@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -84,10 +83,10 @@ class Journal extends Component  {
             margin: 10,
           width: 325} 
         }
-          type="reps" 
-          name="reps" 
-          placeholder="Reps" 
-          value={this.state.reps} 
+          type="journal" 
+          name="journal" 
+          placeholder="journal" 
+          value={this.state.journal} 
           onChange={this.handleChange} 
           required 
         />
