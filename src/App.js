@@ -104,7 +104,7 @@ export default class App extends Component {
             render={ props => (
               <div> 
                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
-                <MeditationController {...props} handleLogin={this.handleLogin} /> 
+                <MeditationController {...props} userId={this.state.user.id} handleLogin={this.handleLogin} /> 
               </div> 
             )}
           /> 
@@ -113,7 +113,7 @@ export default class App extends Component {
             render={ props => (
               <div> 
                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
-                <Journal {...props} handleLogin={this.handleLogin} /> 
+                <Journal {...props} userId={this.state.user.id} handleLogin={this.handleLogin} /> 
               </div> 
             )}
           /> 
@@ -122,7 +122,7 @@ export default class App extends Component {
             render={ props => (
               <div> 
                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
-                <ColdShower {...props} handleLogin={this.handleLogin} /> 
+                <ColdShower {...props}  userId={this.state.user.id} handleLogin={this.handleLogin} /> 
               </div> 
             )}
           /> 

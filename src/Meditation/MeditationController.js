@@ -14,9 +14,18 @@ import MeditationAfter from './MeditationAfter';
     this.state = {
       step: 1, 
       before: "",
-      after: ""    
+      after: "", 
+      user_id: ""    
     }
    
+  }
+
+  componentDidMount(){
+    console.log(this.props)
+
+    this.setState({
+      user_id: this.props.userId
+    })
   }
 
   nextStep = () => {
@@ -34,45 +43,51 @@ import MeditationAfter from './MeditationAfter';
   }
 
   //weird syntax?
-  handleChange = input => event => {
+  handleChange = event => {
     this.setState({[event.target.name]: event.target.value});
+    console.log(this.state)
+
+    
   }
 
 
   handleSubmit= (event) => {
     event.preventDefault();
     const {
-      before,
-      after
+      before, 
+      after,
+      user_id,
     } = this.state 
 
-    axios.post("http://localhost:3001.com/meditationBefore",{
+    console.log(this.state)
+
+    axios.post("http://localhost:3001/meditation",{
       user: {
         before: before,
-        user_id: this.props.user.id,
-        user_email: this.props.user.email
+        after: after,
+        user_id: user_id,
       }
     }, 
     { withCredentials: true }
     ).then( response => {
-      console.log("posting meditaiton before response", response)
-      this.props.history.push("/projectlogs");
+      console.log("posting meditaiton  response", response)
      // add error handling here
     }).catch( err => {
       console.log("posting log error", err)
     });
-
-    
   }
+
 
   renderSwitch = (step, values) => {
     switch(step) {
       case 1: return (
         <div> 
           <MeditationBefore 
+            userId={this.props.userId}
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
+
           />
         </div> 
       )
@@ -81,7 +96,6 @@ import MeditationAfter from './MeditationAfter';
         <MeditationVideo 
           nextStep={this.nextStep}
           prevStep={this.prevStep}
-          handleChange={this.handleChange}
           values={values}
         />
       </div> 
@@ -89,9 +103,11 @@ import MeditationAfter from './MeditationAfter';
       case 3: return(
         <div>
         <MeditationAfter 
+          userId={this.props.userId}
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           values={values}
+          handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
           /> 
         </div>

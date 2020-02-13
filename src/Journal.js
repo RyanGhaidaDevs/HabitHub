@@ -55,6 +55,8 @@ class Journal extends Component  {
       journal
     } = this.state 
 
+    console.log(this.props.userId)
+
     axios.post("http://localhost:3001/journal", {
       user: {
         journal: journal,
