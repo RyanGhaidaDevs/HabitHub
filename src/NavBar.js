@@ -77,7 +77,7 @@ const NavBar = (props) => {
         <IconButton onClick={()=> props.history.push("/home")} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           Home
         </IconButton>
-        <Typography variant="h7" className={classes.title}>
+        <Typography variant="h5" className={classes.title}>
           Habit Hub
         </Typography>
         <span className={classes.NavBarButtons}>

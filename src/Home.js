@@ -25,19 +25,19 @@ class Home extends Component  {
         <h1> home </h1>
         <Button 
           label="continue"
-          primary={true}
+          primary="true"
           margin='15'
           onClick={()=> this.props.history.push("/meditation")}
           > New Meditation </Button>
              <Button 
           label="continue"
-          primary={true}
+          primary="true"
           margin='15'
           onClick={()=> this.props.history.push("/journal")}
           > New Journal </Button>
             <Button 
           label="continue"
-          primary={true}
+          primary="true"
           margin='15'
           onClick={()=> this.props.history.push("/coldShower")}
           > Cold Shower </Button>

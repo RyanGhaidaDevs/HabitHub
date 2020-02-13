@@ -19,7 +19,6 @@ const styles = {
     border: "groove",
     background: "white",
     fontSize: 18,
-    border: 5,
     borderRadius: 5,
     boxShadow: '0 3px 10px 2px rgb(192,192,192)',
     margin: 15
