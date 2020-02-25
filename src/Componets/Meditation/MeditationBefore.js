@@ -43,9 +43,8 @@ class MeditationBefore extends Component  {
 
     return(
       <div>
-        <h1> Meditation </h1>
+        <h3> Write a few words below explaining how you feel before you begin your session: </h3> 
         <form onSubmit={this.handleSubmit} > 
-        <h3> Before </h3> 
         <input 
         style={
           {fontSize: 22,
@@ -54,7 +53,7 @@ class MeditationBefore extends Component  {
         }
           type="before" 
           name="before" 
-          placeholder="before" 
+          placeholder="how are you feeling today" 
           value={this.props.before} 
           onChange={this.props.handleChange} 
           required 

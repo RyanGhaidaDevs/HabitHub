@@ -23,23 +23,29 @@ class Home extends Component  {
     return(
       <div>
         <Button 
-          label="continue"
           primary="true"
           margin='15'
           onClick={()=> this.props.history.push("/meditation")}
-          > New Meditation </Button>
-             <Button 
-          label="continue"
+          > New Meditation 
+          </Button>
+          <Button 
           primary="true"
           margin='15'
           onClick={()=> this.props.history.push("/journal")}
-          > New Journal </Button>
-            <Button 
-          label="continue"
+          > New Journal 
+          </Button>
+          <Button 
           primary="true"
           margin='15'
           onClick={()=> this.props.history.push("/coldShower")}
-          > Cold Shower </Button>
+          > Cold Shower 
+          </Button>
+          <Button 
+          primary="true"
+          margin='15'
+          onClick={()=> this.props.history.push("/deepBreathing")}
+          > Deep Breathing
+          </Button>
 
       </div>
     )

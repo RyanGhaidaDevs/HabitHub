@@ -6,10 +6,11 @@ import axios from 'axios';
 import Registration from './auth/Registration';
 import Login from './auth/Login'; 
 import Home from './Home';
-import NavBar from './NavBar';
-import MeditationController from './Meditation/MeditationController';
-import Journal from './Journal';
-import ColdShower from './ColdShower';
+import NavBar from './Componets/NavBar';
+import MeditationController from './Componets/Meditation/MeditationController';
+import Journal from './Componets/Journal';
+import ColdShower from './Componets/ColdShower';
+import DeepBreathing from './Componets/DeepBreathing';
 
 export default class App extends Component {
   constructor() {
@@ -123,6 +124,15 @@ export default class App extends Component {
               <div> 
                 <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
                 <ColdShower {...props}  userId={this.state.user.id} handleLogin={this.handleLogin} /> 
+              </div> 
+            )}
+          /> 
+          <Route 
+            path={"/deepBreathing"} 
+            render={ props => (
+              <div> 
+                <NavBar {...props}   handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user} /> 
+                <DeepBreathing {...props}  userId={this.state.user.id} handleLogin={this.handleLogin} /> 
               </div> 
             )}
           /> 

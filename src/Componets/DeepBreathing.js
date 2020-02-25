@@ -31,7 +31,8 @@ class DeepBreathing extends Component  {
   constructor(props) {
     super(props);
       this.state = {
-        minutes: "", 
+        sets: "", 
+        after: "",
       }
 
   this.handleChange = this.handleChange.bind(this)
@@ -51,12 +52,14 @@ class DeepBreathing extends Component  {
     event.preventDefault()
 
     const {
-      minutes
+      sets, 
+      after
     } = this.state 
 
-    axios.post("http://localhost:3001/shower", {
+    axios.post("http://localhost:3001/breathing", {
       user: {
-        minutes: minutes,
+        sets: sets,
+        after: after, 
         user_id: this.props.userId
       }
     }, 
@@ -73,22 +76,36 @@ class DeepBreathing extends Component  {
 
     return(
       <div>
-        <h1> Cold Shower </h1>
+        <h1> Deep Breathing </h1>
         <form onSubmit={this.handleSubmit} > 
-         
         <input 
         style={
           {fontSize: 22,
             margin: 10,
           width: 325} 
         }
-          type="minutes" 
-          name="minutes" 
-          placeholder="minutes" 
-          value={this.state.minutes} 
+          type="sets" 
+          name="sets" 
+          placeholder="sets" 
+          value={this.state.sets} 
           onChange={this.handleChange} 
           required 
         />
+
+        <input 
+        style={
+          {fontSize: 22,
+            margin: 10,
+          width: 325} 
+        }
+          type="after" 
+          name="after" 
+          placeholder="after" 
+          value={this.state.after} 
+          onChange={this.handleChange} 
+          required 
+        />
+        
         <Button 
         label="submit"
         type="submit"

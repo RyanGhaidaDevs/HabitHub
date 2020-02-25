@@ -16,9 +16,9 @@ class MeditationAfter extends Component  {
 
     return(
       <div>
-        <h1> Meditation </h1>
-        <form onSubmit={this.props.handleSubmit} > 
-        <h3> After </h3> 
+        <h3> How do you feel after your session?  </h3> 
+
+        <form onSubmit={this.props.handleSubmit} >  
         <input 
         style={
           {fontSize: 22,
@@ -32,6 +32,7 @@ class MeditationAfter extends Component  {
           onChange={this.props.handleChange} 
           required 
         />
+        <br/>
         <Button 
         label="submit"
         type="submit"
@@ -41,7 +42,7 @@ class MeditationAfter extends Component  {
         size="small"
         style={
           {fontSize: 24,
-            color: 'orange',
+            color: 'green',
             padding: 10,
           } 
         }

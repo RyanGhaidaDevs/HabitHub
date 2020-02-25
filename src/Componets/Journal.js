@@ -79,19 +79,24 @@ class Journal extends Component  {
         <h1> Journal </h1>
         <form onSubmit={this.handleSubmit} > 
          
-        <input 
+        <textarea 
         style={
           {fontSize: 22,
             margin: 10,
-          width: 325} 
+          width: 625} 
         }
+          cols="160" 
+          rows="10"
+          minlength="50"
           type="journal" 
           name="journal" 
           placeholder="journal" 
           value={this.state.journal} 
           onChange={this.handleChange} 
           required 
-        />
+        > 
+        </textarea>
+        <br/> 
         <Button 
         label="submit"
         type="submit"
@@ -101,7 +106,7 @@ class Journal extends Component  {
         size="small"
         style={
           {fontSize: 24,
-            color: 'orange',
+            color: 'green',
             padding: 10,
           } 
         }
