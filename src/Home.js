@@ -22,7 +22,6 @@ class Home extends Component  {
 
     return(
       <div>
-        <h1> home </h1>
         <Button 
           label="continue"
           primary="true"
