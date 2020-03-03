@@ -71,9 +71,6 @@ class DeepBreathing extends Component  {
 
   render(){
 
-    const {values, handleChange} = this.props;
-    const { classes } = this.props;
-
     return(
       <div>
         <h1> Deep Breathing </h1>

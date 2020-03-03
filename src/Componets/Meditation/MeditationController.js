@@ -45,9 +45,7 @@ import MeditationAfter from './MeditationAfter';
   //weird syntax?
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value});
-    console.log(this.state)
-
-    
+    console.log(this.state)  
   }
 
 
@@ -59,7 +57,7 @@ import MeditationAfter from './MeditationAfter';
       user_id,
     } = this.state 
 
-    console.log(this.state)
+
 
     axios.post("http://localhost:3001/meditation",{
       user: {
@@ -112,6 +110,7 @@ import MeditationAfter from './MeditationAfter';
           /> 
         </div>
       )
+      default:
       
     }
   }

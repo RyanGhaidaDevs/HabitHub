@@ -38,7 +38,7 @@ class MeditationBefore extends Component  {
 
   render(){
 
-    const {values, handleChange} = this.props;
+    const {before, handleChange} = this.props;
     const { classes } = this.props;
 
     return(
@@ -54,8 +54,8 @@ class MeditationBefore extends Component  {
           type="before" 
           name="before" 
           placeholder="how are you feeling today" 
-          value={this.props.before} 
-          onChange={this.props.handleChange} 
+          value={before} 
+          onChange={handleChange} 
           required 
         />
 

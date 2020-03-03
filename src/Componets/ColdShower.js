@@ -68,12 +68,10 @@ class ColdShower extends Component  {
 
   render(){
 
-    const {values, handleChange} = this.props;
-    const { classes } = this.props;
 
     return(
       <div>
-        <h1> Cold Shower </h1>
+        <h3> How many minutes did you endure the cold ! </h3>
         <form onSubmit={this.handleSubmit} > 
          
         <input 
@@ -89,6 +87,7 @@ class ColdShower extends Component  {
           onChange={this.handleChange} 
           required 
         />
+        <br/>
         <Button 
         label="submit"
         type="submit"
@@ -98,7 +97,7 @@ class ColdShower extends Component  {
         size="small"
         style={
           {fontSize: 24,
-            color: 'orange',
+            color: 'green',
             padding: 10,
           } 
         }

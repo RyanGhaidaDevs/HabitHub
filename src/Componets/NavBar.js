@@ -5,8 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import Login from '../auth/Login';
-import Registration from '../auth/Registration';
+
 
 
 const useStyles = makeStyles(theme => ({

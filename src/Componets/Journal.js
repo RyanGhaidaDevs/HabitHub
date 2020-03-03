@@ -19,11 +19,9 @@ const styles = {
     border: "groove",
     background: "white",
     fontSize: 18,
-    border: 5,
     borderRadius: 5,
     boxShadow: '0 3px 10px 2px rgb(192,192,192)',
     margin: 15
-
   },
   };
 
@@ -70,10 +68,6 @@ class Journal extends Component  {
 
 
   render(){
-
-    const {values, handleChange} = this.props;
-    const { classes } = this.props;
-
     return(
       <div>
         <h1> Journal </h1>
